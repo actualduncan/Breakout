@@ -1,11 +1,11 @@
 #include "Brick.h"
 
-Brick::Brick(float x, float y, float width, float height)
+Brick::Brick(float x, float y, float width, float height, const sf::Texture* texture)
     : _isDestroyed(false)
 {
     _shape.setPosition(x, y);
     _shape.setSize(sf::Vector2f(width, height));
-    _shape.setFillColor(sf::Color::Red);
+    _shape.setTexture(texture);
 }
 
 void Brick::render(sf::RenderWindow& window)

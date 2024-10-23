@@ -4,6 +4,7 @@
 BrickManager::BrickManager(sf::RenderWindow* window, GameManager* gameManager)
     : _window(window), _gameManager(gameManager)
 {
+    _brickTexture.loadFromFile("images/cabinetman.jpg");
 }
 
 void BrickManager::createBricks(int rows, int cols, float brickWidth, float brickHeight, float spacing)
@@ -18,7 +19,7 @@ void BrickManager::createBricks(int rows, int cols, float brickWidth, float bric
         for (int j = 0; j < cols; ++j) {
             float x = j * (brickWidth + spacing) + leftEdge;
             float y = i * (brickHeight + spacing) + TOP_PADDING;
-            _bricks.emplace_back(x, y, brickWidth, brickHeight);
+            _bricks.emplace_back(x, y, brickWidth, brickHeight, &_brickTexture);
         }
     }
 }

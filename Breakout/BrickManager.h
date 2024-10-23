@@ -15,7 +15,7 @@ public:
 private:
     std::vector<Brick> _bricks;
     sf::RenderWindow* _window;
-
+    sf::Texture _brickTexture;
     GameManager* _gameManager;
     static constexpr float TOP_PADDING = 100.0f;
 };
