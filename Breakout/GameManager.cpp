@@ -77,11 +77,8 @@ void GameManager::update(float dt)
         _timeLastPowerupSpawned = _time;
     }
 
-    // move paddle
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) _paddle->moveRight(dt);
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) _paddle->moveLeft(dt);
-
     // update everything 
+    _paddle->handleInput(dt);
     _paddle->update(dt);
     _ball->update(dt);
     _powerupManager->update(dt);

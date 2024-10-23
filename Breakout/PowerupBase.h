@@ -6,7 +6,6 @@
 #include "Ball.h"
 #include <vector>
 
-
 class PowerupBase
 {
 public:
